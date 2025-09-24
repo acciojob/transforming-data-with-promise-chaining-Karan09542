@@ -3,10 +3,10 @@ const input = document.getElementById("ip")
 const btn = document.getElementById("btn")
 const output = document.getElementById("output")
 
-const updateDom = (value, delay=1000)=>{
+const updateDom = (value, delay=1000, label = "Result")=>{
 	return new Promise((resolve)=> {
 		setTimeout(()=> {
-			output.innerHTML = value;
+			output.innerHTML = `${label}: ${value}`;
 			resolve(value)
 		},delay)
 	})
@@ -18,5 +18,5 @@ btn.addEventListener("click", ()=> {
 	.then((value) => updateDom(value*2, 2000))
 	.then((value) => updateDom(value-3))
 	.then((value) => updateDom(value/2))
-	.then((value) => updateDom(value+10))
+	.then((value) => updateDom(value+10, 1000, "Final Result"))
 })
