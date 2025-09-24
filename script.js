@@ -15,7 +15,7 @@ const updateDom = (value, delay=1000)=>{
 btn.addEventListener("click", ()=> {
 	const value = Number(input.value)
 	 updateDom(value, 2000)
-	.then((value) => updateDom(value*2))
+	.then((value) => updateDom(value*2, 2000))
 	.then((value) => updateDom(value-3))
 	.then((value) => updateDom(value/2))
 	.then((value) => updateDom(value+10))
